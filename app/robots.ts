@@ -7,6 +7,8 @@ import { SITE_CONFIG, ALLOW_INDEXING } from "@/config/site";
  * Directs search engine crawlers according to environment configuration.
  * Development and preview deployments disallow crawling to prevent duplicate/staging indexing.
  */
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   if (!ALLOW_INDEXING) {
     return {

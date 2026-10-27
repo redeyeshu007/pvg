@@ -7,9 +7,11 @@ import { SITE_CONFIG } from "@/config/site";
  * Exposes only verified, production-ready public routes.
  * Future pages will be added to this list as they are implemented.
  */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_CONFIG.url;
-  const lastModified = new Date().toISOString();
+  const lastModified = "2026-10-27T00:00:00.000Z";
 
   return [
     {
