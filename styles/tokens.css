@@ -1,0 +1,33 @@
+/**
+ * Pavan Vela Grand - Design Tokens
+ *
+ * Centralized palette, typography variables, and component design tokens.
+ */
+
+:root {
+  /* Brand Primary Colors */
+  --color-brand-white: #ffffff;
+  --color-brand-blue: #173b63;
+  --color-brand-blue-hover: #112d4d;
+  --color-brand-blue-light: #225185;
+  --color-brand-navy: #0e243d;
+
+  /* Brand Accent Colors */
+  --color-brand-gold: #c5a572;
+  --color-brand-gold-hover: #b5925a;
+  --color-brand-gold-light: #dfcb9f;
+  --color-brand-gold-muted: #f4eee2;
+
+  /* Neutrals & Surfaces */
+  --color-brand-bg: #f7f9fc;
+  --color-brand-surface: #ffffff;
+  --color-brand-surface-muted: #edf2f7;
+  --color-brand-text: #182230;
+  --color-brand-text-muted: #536479;
+  --color-brand-border: #e2e8f0;
+  --color-brand-border-subtle: #f1f5f9;
+
+  /* Focus & Accessibility */
+  --focus-ring-color: #173b63;
+  --focus-ring-offset: 2px;
+}
