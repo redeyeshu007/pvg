@@ -45,9 +45,9 @@ export const EXPERIENCES_JOURNEY_ITEMS: readonly ExperienceJourneyItem[] = [
     title: "A Convenient Arrival",
     description:
       "Find Pavan Vela Grand on Palani Road Bypass, Dindigul, with a location that makes planning your stay straightforward.",
-    image: "/images/hero/exterior.jpg",
+    image: "/images/experiences/pvg-convenient-arrival.png",
     imageAlt:
-      "Pavan Vela Grand hotel exterior in Dindigul, Tamil Nadu on Palani Road Bypass",
+      "Authentic Hotel PVG Grand hotel building exterior and vehicle arrival driveway on Palani Road Bypass in Dindigul",
     tag: "EASY BYPASS ACCESS",
   },
   {
