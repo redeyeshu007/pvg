@@ -81,8 +81,8 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
     name: "PREMIUM TWIN ROOM — MODERN RETREAT",
     shortName: "PREMIUM TWIN",
     category: "Twin Accommodation",
-    image: "/images/rooms/premium-twin.jpg",
-    imageAlt: "Modern Premium Twin bedroom with twin beds at Pavan Vela Grand on Palani Road Bypass, Dindigul",
+    image: "/images/rooms/pvg-twin-room.png",
+    imageAlt: "Authentic Hotel PVG Grand Twin Bedroom with twin beds, ambient cove lighting, air conditioning, and LED TV on Palani Road Bypass in Dindigul",
     description: "Twin-bed hotel rooms in Dindigul ideal for colleagues, transit travelers, or friends. Enjoy quiet air-conditioned relaxation on Palani Road Bypass with dedicated on-site covered parking.",
     specs: {
       bedType: "Two Twin Beds",
@@ -93,7 +93,7 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
       label: "BOOK ROOM",
       href: "tel:+918940444648",
     },
-    isProvisionalData: true,
+    isProvisionalData: false,
   },
   {
     id: "presidential-suite",
