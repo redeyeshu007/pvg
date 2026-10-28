@@ -57,9 +57,9 @@ export const EXPERIENCES_JOURNEY_ITEMS: readonly ExperienceJourneyItem[] = [
     title: "Find Your Room",
     description:
       "Explore the available rooms at Pavan Vela Grand and choose an option that suits your stay in Dindigul.",
-    image: "/images/rooms/executive-suite.jpg",
+    image: "/images/experiences/pvg-unwind-room.png",
     imageAlt:
-      "Executive Suite interior with private balcony and scenic view at Pavan Vela Grand Dindigul",
+      "Authentic Hotel PVG Grand comfortable guest bedroom with swan heart towel art, warm ambient ceiling lighting, and tufted headboard on Palani Road Bypass in Dindigul",
     tag: "COMFORTABLE ROOMS",
   },
   {
