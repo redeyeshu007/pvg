@@ -100,8 +100,8 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
     name: "PRESIDENTIAL SUITE — SIGNATURE LUXURY",
     shortName: "PRESIDENTIAL SUITE",
     category: "Signature Suite",
-    image: "/images/rooms/presidential-suite.jpg",
-    imageAlt: "Signature Presidential Luxury Suite master bedroom at Pavan Vela Grand hotel, Palani Road Bypass, Dindigul",
+    image: "/images/rooms/pvg-presidential-suite.png",
+    imageAlt: "Authentic Hotel PVG Grand Presidential Suite bedroom with plush double bed, tufted headboard, decorative swan towels, air conditioning, and marble flooring on Palani Road Bypass in Dindigul",
     description: "Signature luxury suite accommodation at Pavan Vela Grand Dindigul. Expansive proportions, serene ambiance away from bypass traffic, air conditioning, and attentive hospitality.",
     specs: {
       bedType: "Master King Bed",
@@ -112,6 +112,6 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
       label: "BOOK ROOM",
       href: "tel:+918940444648",
     },
-    isProvisionalData: true,
+    isProvisionalData: false,
   },
 ] as const;
