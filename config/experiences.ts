@@ -25,9 +25,9 @@ export const EXPERIENCES_INTRO: ExperienceIntroContent = {
   description:
     "Discover the thoughtful conveniences and peaceful setting at Pavan Vela Grand, located on Palani Road Bypass, Dindigul. Explore our rooms and discover a comfortable place to stay in Dindigul.",
   ctaText: "Explore the Experience",
-  image: "/images/hero/suite-interior.jpg",
+  image: "/images/experiences/pvg-experience-room.png",
   imageAlt:
-    "Spacious luxury suite lounge interior with warm natural lighting at Pavan Vela Grand hotel in Dindigul",
+    "Authentic Hotel PVG Grand spacious bedroom with double and single beds, ambient purple cove lighting, and air conditioning on Palani Road Bypass in Dindigul",
 };
 
 export const EXPERIENCES_JOURNEY_HEADER = {
