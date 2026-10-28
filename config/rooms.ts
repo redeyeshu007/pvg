@@ -43,8 +43,8 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
     name: "EXECUTIVE SUITE — SPATIAL LUXURY",
     shortName: "EXECUTIVE SUITE",
     category: "Suite Living",
-    image: "/images/rooms/executive-suite.jpg",
-    imageAlt: "Spacious Executive Suite lounge and bedroom with scenic balcony at Pavan Vela Grand Dindigul",
+    image: "/images/rooms/pvg-executive-suite.png",
+    imageAlt: "Authentic Hotel PVG Grand Executive Suite bedroom with spacious double and single beds, ambient cove lighting, air conditioning, and marble flooring on Palani Road Bypass in Dindigul",
     description: "Spacious suite accommodation in Dindigul tailored for business travelers and extended stays at Pavan Vela Grand. Features a dedicated lounge, air conditioning, and convenient on-site parking.",
     specs: {
       bedType: "King Bed",
@@ -55,7 +55,7 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
       label: "BOOK ROOM",
       href: "tel:+918940444648",
     },
-    isProvisionalData: true,
+    isProvisionalData: false,
   },
   {
     id: "family-suite",
