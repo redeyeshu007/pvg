@@ -111,7 +111,7 @@ export function AboutSection() {
               </div>
             </motion.div>
 
-            {/* Right Column: Portrait Editorial Photography */}
+            {/* Right Column: Editorial Photography (Full Image Shown Without Cropping) */}
             <motion.div
               initial={
                 prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 30 }
@@ -123,20 +123,21 @@ export function AboutSection() {
                 delay: prefersReducedMotion ? 0 : 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="lg:col-span-6 xl:col-span-6"
+              className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center"
             >
-              <div className="group relative w-full h-[360px] sm:h-[480px] lg:h-[560px] rounded-xs overflow-hidden bg-slate-900 shadow-[0_20px_50px_rgba(23,59,99,0.08)] ring-1 ring-slate-200/80">
+              <div className="relative w-full aspect-[3/2] rounded-xs overflow-hidden bg-slate-50 shadow-[0_20px_50px_rgba(23,59,99,0.08)] ring-1 ring-slate-200/80">
                 <Image
                   src={ABOUT_HERO.image}
                   alt={ABOUT_HERO.imageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-103"
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-                {/* Editorial Corner Badge */}
-                <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xs border border-slate-200/80 shadow-sm">
+              {/* Editorial Caption Badge (Positioned below image to never block the emblem) */}
+              <div className="flex items-center justify-end mt-3">
+                <div className="bg-white px-3.5 py-1.5 rounded-xs border border-slate-200/80 shadow-xs">
                   <span className="text-[10.5px] font-sans font-bold uppercase tracking-[0.24em] text-[#173B63]">
                     {ABOUT_HERO.caption}
                   </span>
