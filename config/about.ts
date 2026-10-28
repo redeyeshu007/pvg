@@ -33,9 +33,9 @@ export const ABOUT_PLACE: AboutPlaceContent = {
   supportingParagraph:
     "Positioned along the Palani Road Bypass corridor, the property provides straightforward vehicle access for travelers and families visiting Dindigul. Enjoy the ease of reaching your accommodation smoothly without navigating congested inner-town streets.",
   locationBadge: "DINDIGUL, TAMIL NADU",
-  image: "/images/facilities/peaceful-setting.jpg",
+  image: "/images/about/pvg-rooted-dindigul.png",
   imageAlt:
-    "Tranquil daylight setting and open surroundings of Pavan Vela Grand on Palani Road Bypass in Dindigul",
+    "Authentic Hotel PVG Grand building facade with blue rooftop signs, glass entrance, and driveway on Palani Road Bypass in Dindigul",
   caption: "Palani Road Bypass, Dindigul",
 };
 

@@ -203,19 +203,21 @@ export function AboutSection() {
                 delay: prefersReducedMotion ? 0 : 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="lg:col-span-6"
+              className="lg:col-span-6 flex flex-col justify-center"
             >
-              <div className="group relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-xs overflow-hidden bg-slate-950 shadow-[0_25px_60px_rgba(0,0,0,0.5)] ring-1 ring-white/15">
+              <div className="relative w-full aspect-[2/3] max-w-[360px] sm:max-w-[400px] lg:max-w-[420px] mx-auto lg:ml-auto rounded-xs overflow-hidden bg-slate-950/40 shadow-[0_25px_60px_rgba(0,0,0,0.5)] ring-1 ring-white/15">
                 <Image
                   src={ABOUT_PLACE.image}
                   alt={ABOUT_PLACE.imageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-103"
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#10263D]/60 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-                <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-xs border border-white/15">
+              {/* Editorial Caption Badge below image */}
+              <div className="flex items-center justify-center lg:justify-end max-w-[360px] sm:max-w-[400px] lg:max-w-[420px] mx-auto lg:ml-auto w-full mt-3">
+                <div className="bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-xs border border-white/15">
                   <span className="text-[11px] font-sans tracking-widest uppercase text-white/90">
                     {ABOUT_PLACE.caption}
                   </span>
