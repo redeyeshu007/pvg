@@ -20,7 +20,7 @@ export const ABOUT_HERO: AboutHeroContent = {
     "Discover Pavan Vela Grand, located on Palani Road Bypass, Dindigul, Tamil Nadu. Explore our available rooms and discover the thoughtful conveniences that shape your stay.",
   image: "/images/about/pvg-about-hero.png",
   imageAlt:
-    "Authentic Hotel PVG Grand architectural perspective view at twilight with warm spotlighting, rooftop sign, and framed palm trees on Palani Road Bypass in Dindigul",
+    "Authentic golden Hotel PVG Grand official insignia plaque with peacock, Vel, and rooster insignia mounted on textured stone facade on Palani Road Bypass in Dindigul",
   caption: "PAVAN VELA GRAND · DINDIGUL",
 };
 
