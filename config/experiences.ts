@@ -27,7 +27,7 @@ export const EXPERIENCES_INTRO: ExperienceIntroContent = {
   ctaText: "Explore the Experience",
   image: "/images/experiences/pvg-experience-room.png",
   imageAlt:
-    "Authentic Hotel PVG Grand spacious bedroom with double and single beds, ambient purple cove lighting, and air conditioning on Palani Road Bypass in Dindigul",
+    "Authentic Hotel PVG Grand king bedroom with beautifully arranged plush bed, decorative swan towel art, red cushions, tufted headboard, and marble floor on Palani Road Bypass in Dindigul",
 };
 
 export const EXPERIENCES_JOURNEY_HEADER = {
