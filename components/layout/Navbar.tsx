@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS, NAV_BOOKING_CTA } from "@/config/navigation";
 import { BRAND_CONFIG } from "@/config/brand";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 /**
  * Premium Website Navbar for Pavan Vela Grand
@@ -18,6 +19,7 @@ import { BRAND_CONFIG } from "@/config/brand";
  * - Fully accessible mobile navigation with keyboard escape handling.
  */
 export function Navbar() {
+  const { openBookingModal } = useBookingModal();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -186,20 +188,22 @@ export function Navbar() {
 
           {/* Right: Booking CTA (Desktop) */}
           <div className="hidden md:flex items-center">
-            <a
-              href={NAV_BOOKING_CTA.href}
+            <button
+              type="button"
+              onClick={openBookingModal}
               className={`inline-flex items-center justify-center rounded-sm bg-[#C5A572] text-[#182230] font-sans uppercase tracking-[0.16em] font-semibold transition-all duration-300 hover:bg-[#B69562] hover:text-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C5A572] ${
                 scrolled ? "px-5 py-2 text-[11px]" : "px-6 py-2.5 text-xs"
               }`}
             >
               {NAV_BOOKING_CTA.label}
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center space-x-2.5 sm:space-x-3">
-            <a
-              href={NAV_BOOKING_CTA.href}
+            <button
+              type="button"
+              onClick={openBookingModal}
               className={`inline-flex items-center justify-center rounded-sm bg-[#C5A572] text-[#182230] font-sans uppercase tracking-[0.12em] font-semibold transition-all duration-300 hover:bg-[#B69562] hover:text-white ${
                 scrolled
                   ? "px-3 py-1.5 text-[10.5px]"
@@ -207,7 +211,7 @@ export function Navbar() {
               }`}
             >
               Book
-            </a>
+            </button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -269,13 +273,16 @@ export function Navbar() {
                 </a>
               ))}
               <div className="pt-2">
-                <a
-                  href={NAV_BOOKING_CTA.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openBookingModal();
+                  }}
                   className="w-full inline-flex items-center justify-center px-6 py-3 rounded-sm bg-[#C5A572] text-[#182230] font-sans text-xs uppercase tracking-[0.16em] font-semibold transition-all hover:bg-[#B69562] hover:text-white"
                 >
                   {NAV_BOOKING_CTA.label}
-                </a>
+                </button>
                 <p className="mt-2 text-center text-xs font-sans text-[#536479]">
                   Reservations: {BRAND_CONFIG.contact.phone}
                 </p>

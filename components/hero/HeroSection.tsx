@@ -4,6 +4,7 @@ import React, { useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 import { HeroImageSlider } from "./HeroImageSlider";
 import { HERO_CONTENT } from "@/config/hero";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 function subscribeReducedMotion(callback: () => void) {
   if (typeof window === "undefined") return () => {};
@@ -36,6 +37,7 @@ const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
  * - 100% accessible, responsive, and performance-optimized.
  */
 export function HeroSection() {
+  const { openBookingModal } = useBookingModal();
   const prefersReducedMotion = useSyncExternalStore(
     subscribeReducedMotion,
     getReducedMotionSnapshot,
@@ -93,12 +95,13 @@ export function HeroSection() {
 
             {/* Exactly ONE Primary Booking CTA & Contact Link */}
             <div className="pt-2 flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-6">
-              <a
-                href={HERO_CONTENT.ctaTel}
+              <button
+                type="button"
+                onClick={openBookingModal}
                 className="inline-flex items-center justify-center px-9 py-4 rounded-sm bg-[#C5A572] text-[#182230] font-sans text-xs sm:text-[13px] uppercase tracking-[0.18em] font-semibold transition-all duration-300 hover:bg-[#B69562] hover:text-white shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C5A572]"
               >
                 {HERO_CONTENT.ctaText}
-              </a>
+              </button>
 
               <a
                 href={HERO_CONTENT.ctaTel}

@@ -12,6 +12,7 @@ import {
   ABOUT_CTA,
 } from "@/config/about";
 import type { AboutHighlight, AboutPromiseStep } from "@/types/about";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 function subscribeReducedMotion(callback: () => void) {
   if (typeof window === "undefined") return () => {};
@@ -48,6 +49,7 @@ function getReducedMotionServerSnapshot() {
  * - Full reduced-motion and mobile-responsive support.
  */
 export function AboutSection() {
+  const { openBookingModal } = useBookingModal();
   const prefersReducedMotion = useSyncExternalStore(
     subscribeReducedMotion,
     getReducedMotionSnapshot,
@@ -399,15 +401,16 @@ export function AboutSection() {
 
           {/* Conversion Action Buttons */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* Primary Phone Booking CTA */}
-            <a
-              href={ABOUT_CTA.primaryActionHref}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-[#C5A572] text-[#182230] font-sans text-xs uppercase tracking-[0.18em] font-semibold transition-all duration-300 hover:bg-[#B69562] hover:text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C5A572]"
-              aria-label={`Call to book a room at ${ABOUT_CTA.phoneDisplay}`}
+            {/* Primary Book a Room Modal CTA */}
+            <button
+              type="button"
+              onClick={openBookingModal}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-[#C5A572] text-[#182230] font-sans text-xs uppercase tracking-[0.18em] font-semibold transition-all duration-300 hover:bg-[#B69562] hover:text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C5A572] cursor-pointer"
+              aria-label="Open Book a Room enquiry form"
             >
               <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
               <span>{ABOUT_CTA.primaryActionLabel}</span>
-            </a>
+            </button>
 
             {/* WhatsApp Booking Enquiry */}
             <a

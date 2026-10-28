@@ -4,6 +4,8 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import { generateHotelJsonLd, generateLocalBusinessJsonLd } from "@/lib/seo/jsonld";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Preloader } from "@/components/Preloader";
+import { BookingModalProvider } from "@/context/BookingModalContext";
+import { BookingEnquiryModal } from "@/components/booking/BookingEnquiryModal";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -56,7 +58,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-sans bg-[var(--color-brand-bg)] text-[var(--color-brand-text)] selection:bg-[#C5A572]/20 selection:text-[#173B63]"
       >
         <Preloader />
-        {children}
+        <BookingModalProvider>
+          {children}
+          <BookingEnquiryModal />
+        </BookingModalProvider>
       </body>
     </html>
   );

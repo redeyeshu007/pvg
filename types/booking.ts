@@ -49,3 +49,31 @@ export interface RoomReservationRequest {
   readonly roomType?: string;
   readonly specialRequests?: string;
 }
+
+/**
+ * Pavan Vela Grand — Functional Book a Room Enquiry Payload
+ * Strictly 5 fields as specified in business requirements.
+ */
+export interface BookingEnquiryPayload {
+  readonly fullName: string;
+  readonly email: string;
+  readonly contactNumber: string;
+  readonly numberOfRooms: number;
+  readonly totalGuests: number;
+}
+
+export interface BookingEnquiryResponse {
+  readonly success: boolean;
+  readonly message: string;
+  readonly errors?: Partial<Record<keyof BookingEnquiryPayload, string>>;
+}
+
+export interface SmtpConfig {
+  readonly host: string;
+  readonly port: number;
+  readonly secure: boolean;
+  readonly user: string;
+  readonly pass: string;
+  readonly adminEmail: string;
+  readonly mailFrom: string;
+}

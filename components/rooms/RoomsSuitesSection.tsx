@@ -12,6 +12,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ROOMS_ACCOMMODATIONS } from "@/config/rooms";
 import type { RoomAccommodation } from "@/types/room";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 function subscribeReducedMotion(callback: () => void) {
   if (typeof window === "undefined") return () => {};
@@ -50,6 +51,7 @@ const INITIAL_INDEX = MIDDLE_OFFSET + 1;
  * - Compatible with in-page navbar anchors (#stay and #suites).
  */
 export function RoomsSuitesSection() {
+  const { openBookingModal } = useBookingModal();
   const [currentIndex, setCurrentIndex] = useState(INITIAL_INDEX);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
@@ -270,16 +272,17 @@ export function RoomsSuitesSection() {
                         {room.description}
                       </p>
 
-                      <a
-                        href={room.bookingAction.href}
-                        className="mt-3.5 sm:mt-4 inline-flex items-center space-x-1.5 text-xs font-sans font-semibold uppercase tracking-[0.2em] text-[#C5A572] hover:text-[#10263D] transition-colors group/cta"
-                        aria-label={`Book ${room.name} at Pavan Vela Grand, Palani Road Bypass, Dindigul`}
+                      <button
+                        type="button"
+                        onClick={openBookingModal}
+                        className="mt-3.5 sm:mt-4 inline-flex items-center space-x-1.5 text-xs font-sans font-semibold uppercase tracking-[0.2em] text-[#C5A572] hover:text-[#10263D] transition-colors group/cta cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A572] rounded-sm"
+                        aria-label={`Enquire to book ${room.name} at Pavan Vela Grand, Palani Road Bypass, Dindigul`}
                       >
                         <span>{room.bookingAction.label}</span>
                         <span className="text-sm font-serif transition-transform group-hover/cta:translate-x-1">
                           &rsaquo;
                         </span>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 ) : (
