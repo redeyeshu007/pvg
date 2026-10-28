@@ -69,7 +69,7 @@ export const EXPERIENCES_JOURNEY_ITEMS: readonly ExperienceJourneyItem[] = [
     title: "Thoughtful Convenience",
     description:
       "Enjoy the convenience of covered parking at Pavan Vela Grand, a practical consideration for guests arriving by car.",
-    image: "/images/facilities/covered-parking.jpg",
+    image: "/images/experiences/pvg-thoughtful-convenience.png",
     imageAlt:
       "Dedicated covered parking facility for guest vehicles at Pavan Vela Grand hotel in Dindigul",
     tag: "COVERED PARKING",

@@ -28,7 +28,7 @@ export const FACILITIES_LIST: readonly FacilityItem[] = [
     kicker: "ON-SITE CONVENIENCE",
     description:
       "Enjoy the convenience of covered parking when visiting Pavan Vela Grand in Dindigul. Our dedicated on-site sheltered parking structure keeps your vehicle protected from the weather and easily accessible throughout your stay on Palani Road Bypass.",
-    image: "/images/facilities/covered-parking.jpg",
+    image: "/images/facilities/pvg-covered-parking.png",
     imageAlt:
       "Authentic on-site covered parking facility with shaded structure for guest vehicles at Pavan Vela Grand Dindigul",
     highlights: [
