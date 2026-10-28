@@ -24,8 +24,8 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
     name: "DELUXE KING ROOM — PEACEFUL STAY",
     shortName: "DELUXE KING ROOM",
     category: "Deluxe Accommodation",
-    image: "/images/rooms/deluxe-room.jpg",
-    imageAlt: "Deluxe King Room interior with plush bedding and ambient lighting at Pavan Vela Grand hotel on Palani Road Bypass in Dindigul",
+    image: "/images/rooms/pvg-king-room.png",
+    imageAlt: "Authentic Hotel PVG Grand Deluxe King Room with tufted headboard, branded PVG pillow covers, crisp bedding, air conditioning, and bedside telephone on Palani Road Bypass in Dindigul",
     description: "Comfortable hotel rooms in Dindigul situated along Palani Road Bypass. Thoughtfully designed for restful relaxation away from traffic disturbance, with air conditioning and secure on-site covered parking.",
     specs: {
       bedType: "King Bed",
@@ -36,7 +36,7 @@ export const ROOMS_ACCOMMODATIONS: readonly RoomAccommodation[] = [
       label: "BOOK ROOM",
       href: "tel:+918940444648",
     },
-    isProvisionalData: true,
+    isProvisionalData: false,
   },
   {
     id: "executive-suite",
