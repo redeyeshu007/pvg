@@ -173,73 +173,72 @@ export function BookingEnquiryModal() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="booking-modal-title"
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-5 overflow-y-auto"
+          className="fixed inset-0 z-[9999] overflow-y-auto"
         >
           {/* Backdrop with luxury blur */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-[#0B1928]/75 backdrop-blur-md"
+            className="fixed inset-0 bg-[#0B1928]/80 backdrop-blur-md"
             aria-hidden="true"
           />
 
-          {/* Modal Container */}
-          <motion.div
-            ref={modalRef}
-            initial={{ opacity: 0, scale: 0.94, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.94, y: 16 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[430px] bg-white rounded-xl shadow-2xl border border-[#C5A572]/40 overflow-hidden z-10 my-4"
-          >
-            {/* Header: Luxury Navy Gradient & Gold Badge */}
-            <div className="relative bg-gradient-to-br from-[#0D1D2E] via-[#10263D] to-[#173B63] text-white px-5 sm:px-6 pt-5 pb-4 border-b border-[#C5A572]/30">
-              {/* Subtle gold radial shimmer */}
+          {/* Centering wrapper that never clips the top of the modal */}
+          <div className="min-h-full flex items-center justify-center p-3 sm:p-4 text-center">
+            {/* Modal Container */}
+            <motion.div
+              ref={modalRef}
+              initial={{ opacity: 0, scale: 0.95, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 12 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full max-w-[420px] bg-white rounded-2xl shadow-2xl border border-[#C5A572]/40 overflow-hidden z-10 text-left my-auto"
+            >
+              {/* Header: Pure smooth luxury gradient with no seams */}
               <div
-                className="absolute top-0 right-0 w-48 h-24 pointer-events-none opacity-20"
+                className="relative text-white px-5 sm:px-6 pt-5 pb-4 border-b border-[#C5A572]/30"
                 style={{
                   background:
-                    "radial-gradient(circle at top right, #C5A572 0%, transparent 70%)",
+                    "linear-gradient(135deg, #0C1B2B 0%, #10263D 55%, #173B63 100%)",
                 }}
-              />
+              >
+                <div className="relative flex items-start justify-between">
+                  <div className="pr-3">
+                    {/* Eyebrow badge */}
+                    <div className="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-[#C5A572]/15 border border-[#C5A572]/35 mb-1.5">
+                      <Sparkles className="w-2.5 h-2.5 text-[#C5A572]" />
+                      <span className="text-[9px] font-sans uppercase tracking-[0.2em] font-semibold text-[#C5A572]">
+                        Pavan Vela Grand &bull; Dindigul
+                      </span>
+                    </div>
 
-              <div className="relative flex items-start justify-between">
-                <div className="pr-3">
-                  {/* Eyebrow badge */}
-                  <div className="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-[#C5A572]/15 border border-[#C5A572]/35 mb-1.5">
-                    <Sparkles className="w-2.5 h-2.5 text-[#C5A572]" />
-                    <span className="text-[9px] font-sans uppercase tracking-[0.2em] font-semibold text-[#C5A572]">
-                      Pavan Vela Grand &bull; Dindigul
-                    </span>
+                    <h3
+                      id="booking-modal-title"
+                      className="text-xl sm:text-[23px] font-serif font-semibold text-white tracking-tight leading-tight"
+                      style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
+                    >
+                      Book a Room
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-sans mt-1 leading-snug">
+                      Share your details to enquire about your stay at Pavan Vela Grand, Dindigul.
+                    </p>
                   </div>
 
-                  <h3
-                    id="booking-modal-title"
-                    className="text-xl sm:text-[23px] font-serif font-semibold text-white tracking-tight leading-tight"
-                    style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
+                  {/* Circular Close Button */}
+                  <button
+                    type="button"
+                    onClick={handleClose}
+                    disabled={isSubmitting}
+                    aria-label="Close modal"
+                    className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A572] shrink-0 cursor-pointer"
                   >
-                    Book a Room
-                  </h3>
-                  <p className="text-[11px] sm:text-xs text-slate-300 font-sans mt-1 leading-snug">
-                    Share your details to enquire about your stay at Pavan Vela Grand, Dindigul.
-                  </p>
+                    <X className="w-3.5 h-3.5" />
+                  </button>
                 </div>
-
-                {/* Circular Close Button */}
-                <button
-                  type="button"
-                  onClick={handleClose}
-                  disabled={isSubmitting}
-                  aria-label="Close modal"
-                  className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A572] shrink-0 cursor-pointer"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
               </div>
-            </div>
 
             {/* Modal Body */}
             <div className="px-5 py-4 sm:px-6 sm:py-5 bg-white">
@@ -544,7 +543,8 @@ export function BookingEnquiryModal() {
             </div>
           </motion.div>
         </div>
-      )}
-    </AnimatePresence>
+      </div>
+    )}
+  </AnimatePresence>
   );
 }

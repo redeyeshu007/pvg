@@ -42,6 +42,14 @@ export interface RateLimitResult {
  * Checks whether the given client identifier is within the rate limit.
  */
 export function checkRateLimit(clientId: string): RateLimitResult {
+  // Relax rate limit in local development for localhost testing
+  if (
+    process.env.NODE_ENV !== "production" &&
+    (clientId === "127.0.0.1" || clientId === "::1" || clientId === "localhost")
+  ) {
+    return { allowed: true, remaining: 100 };
+  }
+
   const now = Date.now();
   const record = rateLimitStore.get(clientId) || { timestamps: [] };
 
