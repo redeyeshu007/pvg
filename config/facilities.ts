@@ -44,9 +44,9 @@ export const FACILITIES_LIST: readonly FacilityItem[] = [
     kicker: "TRANQUIL LOCATION",
     description:
       "Enjoy a setting with less traffic disturbance at Pavan Vela Grand, Dindigul. Positioned along the Palani Road Bypass, the property offers a calm, open environment away from busy town congestion, ideal for restful transit and family stays.",
-    image: "/images/facilities/peaceful-setting.jpg",
+    image: "/images/facilities/pvg-peaceful-setting.png",
     imageAlt:
-      "Pavan Vela Grand hotel building exterior and peaceful open surroundings along Palani Road Bypass in Dindigul",
+      "Authentic Hotel PVG Grand building facade with blue rooftop signs, spacious open courtyard, and peaceful setting along Palani Road Bypass in Dindigul",
     highlights: [
       "Noticeably Less Traffic Disturbance",
       "Scenic Palani Road Bypass Location",
