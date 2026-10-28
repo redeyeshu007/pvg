@@ -215,6 +215,15 @@ console.log("\n3. Testing Local API Endpoints (http://localhost:3000)...");
 
 const BASE_URL = "http://localhost:3000";
 
+let reqCounter = 1;
+function nextTestHeaders() {
+  reqCounter++;
+  return {
+    "Content-Type": "application/json",
+    "X-Forwarded-For": `203.0.113.${reqCounter}`,
+  };
+}
+
 await asyncTest("GET /api/health returns 200 and status ok", async () => {
   const res = await fetch(`${BASE_URL}/api/health`);
   assert.equal(res.status, 200);
@@ -238,7 +247,7 @@ await asyncTest("OPTIONS /api/booking-enquiries responds with CORS headers", asy
 await asyncTest("POST /api/booking-enquiries rejects empty body with 400", async () => {
   const res = await fetch(`${BASE_URL}/api/booking-enquiries`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: nextTestHeaders(),
     body: JSON.stringify({}),
   });
   assert.equal(res.status, 400);
@@ -250,7 +259,7 @@ await asyncTest("POST /api/booking-enquiries rejects empty body with 400", async
 await asyncTest("POST /api/booking-enquiries rejects unexpected extra fields with 400", async () => {
   const res = await fetch(`${BASE_URL}/api/booking-enquiries`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: nextTestHeaders(),
     body: JSON.stringify({
       fullName: "Test Guest",
       email: "test@example.com",
@@ -268,7 +277,7 @@ await asyncTest("POST /api/booking-enquiries rejects unexpected extra fields wit
 await asyncTest("POST /api/booking-enquiries rejects invalid numbers (e.g. 0 rooms) with 400", async () => {
   const res = await fetch(`${BASE_URL}/api/booking-enquiries`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: nextTestHeaders(),
     body: JSON.stringify({
       fullName: "Test Guest",
       email: "test@example.com",
@@ -281,6 +290,29 @@ await asyncTest("POST /api/booking-enquiries rejects invalid numbers (e.g. 0 roo
   const data = await res.json();
   assert.equal(data.success, false);
   assert.ok(data.errors?.numberOfRooms);
+});
+
+await asyncTest("Rate Limiting: Rejects 6th submission from the same IP with 429", async () => {
+  const spamIp = "198.51.100.99";
+  const headers = { "Content-Type": "application/json", "X-Forwarded-For": spamIp };
+  // Make 5 requests to reach limit
+  for (let i = 0; i < 5; i++) {
+    await fetch(`${BASE_URL}/api/booking-enquiries`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({}),
+    });
+  }
+  // 6th request must be rejected with 429
+  const res = await fetch(`${BASE_URL}/api/booking-enquiries`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({}),
+  });
+  assert.equal(res.status, 429);
+  const data = await res.json();
+  assert.equal(data.success, false);
+  assert.ok(res.headers.get("retry-after"));
 });
 
 console.log("\n===============================================================");
